@@ -1,0 +1,12 @@
+20240112	17:45:44	a25e8a52-d52d-4e3c-a62b-c9c62f82148c	TypeError: res.header is not a function
+20240112	17:46:17	cc7ce25a-e0d5-4580-8ed0-08c5f39309c5	TypeError: res.header is not a function
+20240112	17:46:22	44edd69e-c46a-430b-8a9f-7cbc5b108fc9	TypeError: res.header is not a function
+20240112	17:46:33	c0b53741-3383-4bae-8ba1-d38fc690c5f6	TypeError: res.header is not a function
+20240112	17:46:41	70206ff0-66f0-45c4-a508-d9f83881e3f5	TypeError: res.header is not a function
+20240112	17:58:11	1a2f3c8f-7b0a-433a-8d43-d73fb1bfddc7	TypeError: res.header is not a function
+20240112	17:58:19	d9a7ce05-f3ff-45bc-bb96-adaadb8925bf	TypeError: res.header is not a function
+20240112	18:01:05	b6ffd79c-a05a-496f-af07-c47a1c4c83c9	TypeError: res.header is not a function
+20240112	18:08:34	e56f0f49-b684-4073-8c48-887dd6908e0b	TypeError: res.header is not a function
+20240225	15:16:51	e9799e4d-f2dd-4582-a67e-fef1930c3db9	Error: Not allowed by CORS
+20240225	15:30:39	d9c89aae-167f-495c-ae6d-e64bfcd7eef4	Error: Not allowed by CORS
+20240225	15:34:16	b0dd2511-f54c-4606-bb2c-d4083900f60e	Error: Not allowed by CORS

@@ -1,19 +1,32 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
+const { logger } = require("./middleware/logEvents");
+const cors = require("cors");
+const errorHandler = require("./middleware/errorHandler");
+const bodyParser = require("body-parser");
+const Recipe = require("./models/recipes");
+const connectDB = require("./config/dbConn");
+const corsOptions = require("./config/corsOpts");
+const views = require("./controllers/views");
+const api = require("./controllers/api");
 const express = require("express");
-const bodyparser = require("body-parser");
+const path = require("path");
 
 const app = express();
+const PORT = process.env.PORT || 5500;
 
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/recipes";
+connectDB();
+app.use(cors(corsOptions));
+app.use(logger);
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+app.use("/", express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
+views(app);
+api(app, Recipe);
 
-app.use(express.static("public"));
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
-
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+mongoose.connection.once("open", () => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});

@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+.recipe-block {
+  width: 46vw;
+  height: 150px;
+  margin: 10px 1.5vw;
+  background-position: left center;
+  background-size: 100%;
+  vertical-align: text-bottom;
+  display: inline-flex;
+  flex-direction: column;
+  min-height: 20vh;
+}
+
+.title {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  margin: 0px 0px 0px 10px;
+  text-shadow: 0px 0px 5px black;
+  margin-top: 68px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  font-family: "Roboto Mono";
+  padding: 4px;
+  margin: 2px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.sort {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 2px;
+}
+
+.tag-cont {
+  margin-left: 8px;
+}
+
+.rm-cont {
+  text-align: right;
+  flex: 1;
+}
+
+.rm {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+  padding-top: 4px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin: 4px;
+  box-shadow: 0px 0px 3px gray;
+  visibility: hidden;
+}
+
+#tags {
+  margin-left: 8px;
+  border-bottom: 1px solid rgb(53, 53, 53);
+  padding-bottom: 5px;
+}
+
+#refresh {
+  display: inline-block;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+}
+
+footer > a:first-of-type {
+  margin-right: 0px;
+  padding-right: 7px;
+  border-right: 1px solid black;
+}
+
+.btn {
+  font-family: "Roboto Mono";
+  font-size: 15px;
+  color: black;
+  background-color: none;
+  text-decoration: none;
+  padding: 3px;
+  margin: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  .recipe-block {
+    width: 92vw;
+  }
+}

@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+li {
+  font-size: 15px;
+}
+
+i {
+  margin-right: 4px;
+}
+
+#food-img {
+  width: 22vw;
+  border-radius: 5px;
+}
+
+#title {
+  font-family: "Roboto Mono";
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+#img-holder {
+  width: 25vw;
+  position: relative;
+  border-right: 1px solid gray;
+  padding-right: 30px;
+  display: inline-block;
+  margin-left: 30px;
+  vertical-align: top;
+  margin-top: 30px;
+}
+
+.scroll {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(223, 223, 223);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  color: rgb(12, 12, 12);
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding-top: 5px;
+  box-shadow: 0px 0px 5px gray;
+  opacity: 0.8;
+}
+
+#right {
+  left: 75%;
+}
+
+#left {
+  left: 2%;
+  visibility: hidden;
+}
+
+#ingredients {
+  display: inline-block;
+  font-family: "Roboto Mono";
+  margin: 30px;
+  width: 60vw;
+}
+
+#instructions {
+  font-family: "Roboto Mono";
+  margin: 0px 30px;
+  border-top: 1px solid gray;
+  padding-top: 20px;
+}
+
+#details {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: white;
+  background-color: black;
+  width: 80%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 4px;
+  font-family: "Roboto Mono";
+  font-size: 1.3vw;
+  text-align: center;
+}
+
+.link {
+  font-family: "Roboto Mono";
+  background-color: black;
+  color: white;
+  padding: 4px;
+  margin: 6px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 30px;
+}
+
+@media only screen and (max-width: 842px) {
+  #img-holder {
+    width: 80vw;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+  }
+
+  #details {
+    font-size: 12px;
+  }
+
+  #food-img {
+    width: 90vw;
+  }
+
+  #title {
+    margin-left: 5px;
+  }
+
+  ul {
+    padding-left: 10px;
+  }
+
+  ol {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  li {
+    font-size: 3vw;
+  }
+
+  #right {
+    left: 70vw;
+  }
+
+  #ingredients,
+  #instructions {
+    margin: 5px;
+    width: 80vw;
+  }
+
+  h4 {
+    margin: 2px 0px;
+  }
+
+  ul {
+    margin: 2px 5px 2px 8px;
+  }
+}
