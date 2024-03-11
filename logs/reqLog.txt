@@ -663,3 +663,9 @@
 20240308	18:19:48	2b016013-dafd-415a-82ba-9eb531593877	GET	undefined	/style/recipe.css
 20240308	18:19:48	a197900e-837e-4293-a76d-5c3e36fe505e	GET	undefined	/scripts/recipe.js
 20240308	18:19:48	53a2c613-afdd-466b-8f1d-1580d749abeb	GET	undefined	/recipe-info/65eb9d0b66618a467f2b1db2
+20240309	16:34:59	84dd14c6-5bf7-41e9-aeb5-8b4687b15504	GET	undefined	/recipes
+20240309	16:34:59	ef10da35-443f-4233-a191-f5556c81c97f	GET	undefined	/favicon.ico
+20240309	16:35:02	ffb56ddb-b384-44a8-a029-0e974a26e318	GET	undefined	/
+20240309	16:35:02	83648d23-bc4a-447a-bd27-730694a52709	GET	undefined	/style/index.css
+20240309	16:35:02	dbd39b65-23f7-4c21-b498-55e30968bc56	GET	undefined	/scripts/index.js
+20240309	16:35:02	7cd743a4-1a9c-40c4-b201-1c7892345ec2	GET	undefined	/recipes
