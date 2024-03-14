@@ -1,5 +1,3 @@
-import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from "@vercel/speed-insights";
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { logger } = require("./middleware/logEvents");
