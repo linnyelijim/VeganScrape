@@ -1,5 +1,5 @@
 import { inject } from "@vercel/analytics";
-inject();
+import { injectSpeedInsights } from "@vercel/speed-insights";
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { logger } = require("./middleware/logEvents");
@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(errorHandler);
 
+injectSpeedInsights();
+inject();
 views(app);
 api(app, Recipe);
 
