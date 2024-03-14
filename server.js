@@ -1,3 +1,5 @@
+import { inject } from "@vercel/analytics";
+inject();
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { logger } = require("./middleware/logEvents");
