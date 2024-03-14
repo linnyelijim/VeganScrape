@@ -24,8 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(errorHandler);
 
-injectSpeedInsights();
-inject();
 views(app);
 api(app, Recipe);
 
