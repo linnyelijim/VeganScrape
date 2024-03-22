@@ -14,15 +14,33 @@ module.exports = (app, Recipe) => {
 
   const getRecipe = async (url) => {
     try {
-      console.log("Fetching recipe from:", url);
       const response = await axios.get(url);
-      console.log("Response status:", response.status);
       if (response.status !== 200) {
         throw new Error(`Failed to fetch recipe: ${response.status}`);
       }
       const body = response.data;
       const $ = cheerio.load(body);
-      console.log("Title:", $("h1.entry-title").text());
+      /*       console.log("Title:", $("h1.entry-title").text());*/
+      const metaCategories = $('meta[property="slick:category"]')
+        .map(function () {
+          return $(this).attr("content");
+        })
+        .get();
+
+      let category = "Other"; // Default category
+      metaCategories.forEach((content) => {
+        if (content.includes("breakfast")) {
+          category = "Breakfast";
+        } else if (content.includes("lunch")) {
+          category = "Lunch";
+        } else if (content.includes("entree")) {
+          category = "Entree";
+        } else if (content.includes("dessert")) {
+          category = "Dessert";
+        }
+      });
+
+      console.log("Recipe Category:", category);
 
       const image = [];
 
@@ -46,7 +64,6 @@ module.exports = (app, Recipe) => {
       // End Minimalist Baker image ↵
       const tagsText = $("span.wprm-recipe-cuisine").text().trim();
       const tags = tagsText.split(",").map((tag) => tag.trim());
-      console.log(tags);
 
       const recipe = {
         title: $("h1.entry-title").text(),
@@ -59,11 +76,11 @@ module.exports = (app, Recipe) => {
         fridge: $("span.wprm-recipe-does-it-keep").text().trim(),
         time: $("span.wprm-recipe-total_time-minutes").text(),
         notes: $("div.wprm-recipe-notes-container").html(),
+        category: category,
       };
       if (recipe.title.length > 1) {
         addToDB(recipe);
       }
-      console.log(image);
       return recipe;
     } catch (error) {
       console.error("Error fetching recipe:", error.message);
@@ -72,7 +89,6 @@ module.exports = (app, Recipe) => {
   };
 
   app.post("/addrecipe", (req, res) => {
-    console.log("request recieved");
     getRecipe(req.body.url)
       .then((body) => res.send(body))
       .catch((err) => res.status(500).send(err));
@@ -96,11 +112,9 @@ module.exports = (app, Recipe) => {
   app.get("/recipes", (req, res) => {
     Recipe.find({})
       .then((data) => {
-        console.log("recipes fetched successfully:");
         res.json(data);
       })
       .catch((err) => {
-        console.error("Error fetching recipes:", err);
         res.status(500).json({ error: "Failed to fetch recipes" });
       });
   });

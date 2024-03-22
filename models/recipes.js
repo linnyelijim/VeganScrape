@@ -16,6 +16,7 @@ const recipeSchema = new Schema({
     type: String,
     default: "no",
   },
+  category: String,
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);

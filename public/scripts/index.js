@@ -9,24 +9,73 @@ const createTags = () => {
   });
 };
 
+const categorySort = (recipes) => {
+  const categories = {};
+  recipes.forEach((recipe, i) => {
+    const category = recipe.category;
+    console.log("Category: ", category);
+    if (!categories[category]) {
+      categories[category] = [];
+      let categoryHTML = `<div id="category-${category}">
+                              <h2>${category}</h2>
+                              <div class="recipes"></div>
+                            </div>`;
+      $("#lists").append(categoryHTML);
+    }
+    categories[category].push(recipe);
+  });
+
+  Object.keys(categories).forEach((category) => {
+    const categoryRecipes = categories[category];
+    categoryRecipes.forEach((recipe, i) => {
+      console.log(recipe.images[i]);
+      const rec = `
+          <div style="background-image:url('${recipe.images[0]}')" class="recipe-block">
+              <div class="rm-cont">
+                  <div class="rm" id="${recipe._id}">X</div>
+              </div>
+              <a id="rec-${i}" class="title" href="/recipes/${recipe._id}"><div>${recipe.title}</div></a>
+              <div class="tag-cont" id="tags-${i}"></div>
+              </div>`;
+      $(`#category-${category} .recipes`).append(rec);
+      recipe.tags.forEach((g) => {
+        console.log(`Tags from db ${g}`);
+        g = g.trim();
+        tags.indexOf(g) == -1 && tags.push(g);
+        const tag = `
+              <div class="tag">${g}</div>`;
+        $(`#tags-${i}`).append(tag);
+      });
+      console.log(tags);
+    });
+  });
+};
+
 const loadRecipes = (recipes) => {
   console.log("Loading Recipes: ", recipes);
-  $("#recipes").empty();
+  $("#lists").empty();
   tags.length = 0;
-  recipes.forEach((e, i) => {
-    console.log(e);
-    console.log(i);
-    console.log(e.images[i]);
+  categorySort(recipes);
+  createTags();
+};
+
+/* const loadRecipes = (recipes) => {
+  console.log("Loading Recipes: ", recipes);
+  $(".recipes").empty();
+  tags.length = 0;
+  recipes.forEach((recipe, i) => {
+    console.log(recipe.images[i]);
     const rec = `
-        <div style="background-image:url('${e.images[0]}')" class="recipe-block">
+        <div style="background-image:url('${recipe.images[0]}')" class="recipe-block">
             <div class="rm-cont">
-                <div class="rm" id="${e._id}">X</div>
+                <div class="rm" id="${recipe._id}">X</div>
             </div>
-            <a id="rec-${i}" class="title" href="/recipes/${e._id}"><div>${e.title}</div></a>
+            <a id="rec-${i}" class="title" href="/recipes/${recipe._id}"><div>${recipe.title}</div></a>
             <div class="tag-cont" id="tags-${i}"></div>
-        </div>`;
-    $("#recipes").append(rec);
-    e.tags.forEach((g) => {
+            <div class="category">Category: ${recipe.category}></div>
+            </div>`;
+    $(".recipes").append(rec);
+    recipe.tags.forEach((g) => {
       console.log(`Tags from db ${g}`);
       g = g.trim();
       tags.indexOf(g) == -1 && tags.push(g);
@@ -37,10 +86,9 @@ const loadRecipes = (recipes) => {
     console.log(tags);
   });
   createTags();
-};
+}; */
 
 const refresh = () => {
-  console.log("Refreshing recipes...");
   $.get("/recipes")
     .done((data) => {
       console.log("Recipes data recieved: ", data);

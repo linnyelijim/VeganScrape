@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
 }
-
+.recipe {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
 .recipe-block {
   width: 46vw;
   height: 150px;
