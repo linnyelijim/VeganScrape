@@ -23,10 +23,6 @@ $(function () {
         $("#stat-img").attr("src", data.images[0]);
         $("#stat").text("Recipe Successfully Added!");
       }
-      setTimeout(() => {
-        $("#stat-img").attr("src", ""); // Hide the image
-        $("#stat").text(""); // Clear the text
-      }, 3000);
     }).fail(() => {
       // Handle request failure
       $("#stat-img").attr(

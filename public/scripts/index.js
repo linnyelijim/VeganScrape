@@ -16,10 +16,16 @@ const categorySort = (recipes) => {
     console.log("Category: ", category);
     if (!categories[category]) {
       categories[category] = [];
-      let categoryHTML = `<div id="category-${category}">
-                              <h2>${category}</h2>
-                              <div class="recipes"></div>
-                            </div>`;
+      let categoryHTML = `<div id="category-${category}" class="category">
+                            <h1 class="letter-animation">${category}</h1>
+                            <div class="scroll-wrapper">
+                              <div class="scroll-button-L" id="left-${category}">&lt;</div> 
+                              <div class="recipes-container">                         
+                                <div class="recipes"></div>
+                              </div>
+                              <div class="scroll-button-R" id="right-${category}">&gt;</div>
+                            </div>  
+                          </div>`;
       $("#lists").append(categoryHTML);
     }
     categories[category].push(recipe);
@@ -28,7 +34,6 @@ const categorySort = (recipes) => {
   Object.keys(categories).forEach((category) => {
     const categoryRecipes = categories[category];
     categoryRecipes.forEach((recipe, i) => {
-      console.log(recipe.images[i]);
       const rec = `
           <div style="background-image:url('${recipe.images[0]}')" class="recipe-block">
               <div class="rm-cont">
@@ -36,20 +41,32 @@ const categorySort = (recipes) => {
               </div>
               <a id="rec-${i}" class="title" href="/recipes/${recipe._id}"><div>${recipe.title}</div></a>
               <div class="tag-cont" id="tags-${i}"></div>
-              </div>`;
+          </div>`;
       $(`#category-${category} .recipes`).append(rec);
       recipe.tags.forEach((g) => {
-        console.log(`Tags from db ${g}`);
         g = g.trim();
         tags.indexOf(g) == -1 && tags.push(g);
-        const tag = `
-              <div class="tag">${g}</div>`;
+        const tag = `<div class="tag">${g}</div>`;
         $(`#tags-${i}`).append(tag);
       });
-      console.log(tags);
     });
+    handleScroll(category);
   });
 };
+function handleScroll(category) {
+  const recipesContainer = $(`#category-${category} .recipes-container`);
+  const scrollLeft = $(`#category-${category} .scroll-button-L`);
+  const scrollRight = $(`#category-${category} .scroll-button-R`);
+  const scrollAmount = 200;
+
+  scrollLeft.on("click", function () {
+    recipesContainer.animate({ scrollLeft: "-=" + scrollAmount }, "slow");
+  });
+
+  scrollRight.on("click", function () {
+    recipesContainer.animate({ scrollLeft: "+=" + scrollAmount }, "slow");
+  });
+}
 
 const loadRecipes = (recipes) => {
   console.log("Loading Recipes: ", recipes);
@@ -58,35 +75,6 @@ const loadRecipes = (recipes) => {
   categorySort(recipes);
   createTags();
 };
-
-/* const loadRecipes = (recipes) => {
-  console.log("Loading Recipes: ", recipes);
-  $(".recipes").empty();
-  tags.length = 0;
-  recipes.forEach((recipe, i) => {
-    console.log(recipe.images[i]);
-    const rec = `
-        <div style="background-image:url('${recipe.images[0]}')" class="recipe-block">
-            <div class="rm-cont">
-                <div class="rm" id="${recipe._id}">X</div>
-            </div>
-            <a id="rec-${i}" class="title" href="/recipes/${recipe._id}"><div>${recipe.title}</div></a>
-            <div class="tag-cont" id="tags-${i}"></div>
-            <div class="category">Category: ${recipe.category}></div>
-            </div>`;
-    $(".recipes").append(rec);
-    recipe.tags.forEach((g) => {
-      console.log(`Tags from db ${g}`);
-      g = g.trim();
-      tags.indexOf(g) == -1 && tags.push(g);
-      const tag = `
-            <div class="tag">${g}</div>`;
-      $(`#tags-${i}`).append(tag);
-    });
-    console.log(tags);
-  });
-  createTags();
-}; */
 
 const refresh = () => {
   $.get("/recipes")

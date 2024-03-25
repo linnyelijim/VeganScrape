@@ -1,15 +1,105 @@
 * {
   box-sizing: border-box;
 }
-.recipe {
+
+h1.letter-animation {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3em;
+  font-variant-caps: all-small-caps;
+  color: black;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  letter-spacing: 15px;
+  position: relative;
+  margin: 68px auto;
+  width: fit-content;
+  padding: 2px 60px;
+  background-color: lightblue;
+  box-shadow: 7px 7px 5px rgb(122, 122, 122);
+  border-radius: 2px;
+  z-index: 1;
 }
+
+h1.letter-animation::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60%;
+  border-color: #000000;
+  text-shadow: 1px 1px 2px rgb(122, 122, 122);
+  border-style: solid;
+  border-width: 3px 0 0 3px;
+  top: -20px;
+  left: -30px;
+}
+
+h1.letter-animation::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60%;
+  border-color: #000000;
+  text-shadow: 1px 1px 2px rgb(122, 122, 122);
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  bottom: -20px;
+  right: -30px;
+}
+
+.scroll-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipes-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-grow: 1;
+  margin: 0 50px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.recipes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button-L,
+.scroll-button-R {
+  position: absolute;
+  z-index: 12;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(169 176 177);
+  border-radius: 50%;
+  color: rgb(255 255 255);
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding-top: 5px;
+  box-shadow: inset 9px 0px 13px 3px #0f0101;
+  cursor: pointer;
+}
+.scroll-button-L {
+  left: 0;
+}
+.scroll-button-R {
+  right: 0;
+}
+.scroll-button-L:hover,
+.scroll-button-R:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
 .recipe-block {
-  width: 46vw;
+  width: 42vw;
   height: 150px;
   margin: 10px 1.5vw;
   background-position: left center;
@@ -19,7 +109,10 @@
   flex-direction: column;
   min-height: 20vh;
 }
-
+.recipe-block:hover {
+  opacity: 85%;
+  transform: scale(1.05);
+}
 .title {
   display: inline-block;
   text-decoration: none;
@@ -56,6 +149,7 @@
 }
 
 .rm-cont {
+  justify-self: right;
   text-align: right;
   flex: 1;
 }
@@ -64,8 +158,8 @@
   display: inline-block;
   height: 20px;
   width: 20px;
-  background-color: red;
-  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: rgb(9 7 7);
   font-family: sans-serif;
   font-weight: bold;
   text-align: center;
@@ -74,8 +168,8 @@
   border-radius: 50%;
   font-size: 12px;
   margin: 4px;
-  box-shadow: 0px 0px 3px gray;
-  visibility: hidden;
+  box-shadow: -3px 3px 9px 1px black;
+  visibility: visible;
 }
 
 #tags {
