@@ -7,6 +7,10 @@ const createTags = () => {
     const tag = `<div class="tag sort">${t}</div>`;
     $("#tags").append(tag);
   });
+  if (searchTags.length > 0) {
+    const clear = `<button id="clear-tags">Clear Filters</button>`;
+    $("#tags").append(clear);
+  }
 };
 
 const categorySort = (recipes) => {
@@ -40,14 +44,14 @@ const categorySort = (recipes) => {
                   <div class="rm" id="${recipe._id}">X</div>
               </div>
               <a id="rec-${i}" class="title" href="/recipes/${recipe._id}"><div>${recipe.title}</div></a>
-              <div class="tag-cont" id="tags-${i}"></div>
+              <div class="tag-cont" id="tags-${category}-${i}"></div>
           </div>`;
       $(`#category-${category} .recipes`).append(rec);
       recipe.tags.forEach((g) => {
         g = g.trim();
         tags.indexOf(g) == -1 && tags.push(g);
         const tag = `<div class="tag">${g}</div>`;
-        $(`#tags-${i}`).append(tag);
+        $(`#tags-${category}-${i}`).append(tag);
       });
     });
     handleScroll(category);
@@ -57,14 +61,24 @@ function handleScroll(category) {
   const recipesContainer = $(`#category-${category} .recipes-container`);
   const scrollLeft = $(`#category-${category} .scroll-button-L`);
   const scrollRight = $(`#category-${category} .scroll-button-R`);
-  const scrollAmount = 200;
-
+  const scrollAmount = $(`#category-${category} .recipe-block`).outerWidth(
+    true
+  );
+  console.log(scrollAmount);
   scrollLeft.on("click", function () {
-    recipesContainer.animate({ scrollLeft: "-=" + scrollAmount }, "slow");
+    recipesContainer.animate(
+      { scrollLeft: "-=" + scrollAmount },
+      "fast",
+      "easeInOutCubic"
+    );
   });
 
   scrollRight.on("click", function () {
-    recipesContainer.animate({ scrollLeft: "+=" + scrollAmount }, "slow");
+    recipesContainer.animate(
+      { scrollLeft: "+=" + scrollAmount },
+      "fast",
+      "easeInOutCubic"
+    );
   });
 }
 
@@ -94,7 +108,7 @@ $("#refresh").on("click", function () {
   refresh();
 });
 
-$("#recipes").on("mouseover", ".rm-cont", function () {
+/* $("#recipes").on("mouseover", ".rm-cont", function () {
   console.log("hover");
   const rm = $(this).children();
   rm.css("visibility", "visible");
@@ -102,7 +116,7 @@ $("#recipes").on("mouseover", ".rm-cont", function () {
 
 $("#recipes").on("mouseout", ".rm-cont", function () {
   $(this).children().css("visibility", "hidden");
-});
+}); */
 
 $("#tags").on("click", ".sort", function () {
   const tag = $(this).text();
@@ -112,7 +126,10 @@ $("#tags").on("click", ".sort", function () {
   console.log(searchString);
   $.get(`/search?tag=${searchString}`, (data) => loadRecipes(data));
 });
-
+$(document).on("click", "#clear-tags", function () {
+  searchTags.length = 0;
+  refresh();
+});
 $("body").on("click", ".rm", function () {
   const id = $(this).attr("id");
   $.ajax({

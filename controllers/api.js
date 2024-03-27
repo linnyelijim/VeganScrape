@@ -27,7 +27,7 @@ module.exports = (app, Recipe) => {
         })
         .get();
 
-      let category = "Other"; // Default category
+      let category = "Other";
       metaCategories.forEach((content) => {
         if (content.includes("breakfast")) {
           category = "Breakfast";
@@ -44,7 +44,6 @@ module.exports = (app, Recipe) => {
 
       const image = [];
 
-      // Minimalist Baker image
       $("figure img").each(function (i, img) {
         const src = $(this).attr("src");
         if (src && src.indexOf("jpg") > -1) {
@@ -61,7 +60,6 @@ module.exports = (app, Recipe) => {
         }
       });
 
-      // End Minimalist Baker image ↵
       const tagsText = $("span.wprm-recipe-cuisine").text().trim();
       const tags = tagsText.split(",").map((tag) => tag.trim());
 

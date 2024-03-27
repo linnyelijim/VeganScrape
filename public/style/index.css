@@ -1,129 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
-h1.letter-animation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 3em;
-  font-variant-caps: all-small-caps;
-  color: black;
-  font-family: "Roboto Mono";
-  font-weight: 800;
-  text-shadow: 0px 0px 5px rgb(255, 255, 255);
-  letter-spacing: 15px;
-  position: relative;
-  margin: 68px auto;
-  width: fit-content;
-  padding: 2px 60px;
-  background-color: lightblue;
-  box-shadow: 7px 7px 5px rgb(122, 122, 122);
-  border-radius: 2px;
-  z-index: 1;
+#tags {
+  margin-left: 0.8vw;
+  border-bottom: 1px solid rgb(53, 53, 53);
+  padding-bottom: 0.5vh;
 }
-
-h1.letter-animation::before {
-  content: "";
-  position: absolute;
-  height: 50%;
-  width: 60%;
-  border-color: #000000;
-  text-shadow: 1px 1px 2px rgb(122, 122, 122);
-  border-style: solid;
-  border-width: 3px 0 0 3px;
-  top: -20px;
-  left: -30px;
-}
-
-h1.letter-animation::after {
-  content: "";
-  position: absolute;
-  height: 50%;
-  width: 60%;
-  border-color: #000000;
-  text-shadow: 1px 1px 2px rgb(122, 122, 122);
-  border-style: solid;
-  border-width: 0 3px 3px 0;
-  bottom: -20px;
-  right: -30px;
-}
-
-.scroll-wrapper {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.recipes-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  flex-grow: 1;
-  margin: 0 50px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.recipes-container::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-button-L,
-.scroll-button-R {
-  position: absolute;
-  z-index: 12;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(169 176 177);
-  border-radius: 50%;
-  color: rgb(255 255 255);
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
-  padding-top: 5px;
-  box-shadow: inset 9px 0px 13px 3px #0f0101;
-  cursor: pointer;
-}
-.scroll-button-L {
-  left: 0;
-}
-.scroll-button-R {
-  right: 0;
-}
-.scroll-button-L:hover,
-.scroll-button-R:hover {
-  opacity: 0.8;
-  transform: scale(1.2);
-}
-
-.recipe-block {
-  width: 42vw;
-  height: 150px;
-  margin: 10px 1.5vw;
-  background-position: left center;
-  background-size: 100%;
-  vertical-align: text-bottom;
-  display: inline-flex;
-  flex-direction: column;
-  min-height: 20vh;
-}
-.recipe-block:hover {
-  opacity: 85%;
-  transform: scale(1.05);
-}
-.title {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  font-family: "Roboto Mono";
-  font-weight: 800;
-  margin: 0px 0px 0px 10px;
-  text-shadow: 0px 0px 5px black;
-  margin-top: 68px;
-}
-
 .tag {
   display: inline-block;
   background-color: black;
@@ -142,10 +24,157 @@ h1.letter-animation::after {
   background-color: white;
   border: 1px solid black;
   margin-bottom: 2px;
+  cursor: pointer;
+}
+.sort:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.tag-cont {
+  margin-left: 0.8vw;
+}
+#clear-tags {
+  margin-left: 85vw;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#lists {
+  margin: 4vh 0;
+}
+h1.letter-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+  font-variant-caps: all-small-caps;
+  color: black;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  text-shadow: 2px 0px 1px rgb(255, 255, 255);
+  letter-spacing: 15px;
+  position: relative;
+  margin: 70px auto 30px;
+  width: fit-content;
+  padding: 2px 10vw;
+  background-color: lightblue;
+  box-shadow: 7px 7px 5px rgb(122, 122, 122);
+  border-radius: 2px;
+  z-index: 1;
 }
 
-.tag-cont {
-  margin-left: 8px;
+h1.letter-animation::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60vw;
+  border-color: #000000;
+  text-shadow: 1px 1px 2px rgb(122, 122, 122);
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  top: -15px;
+  left: -20px;
+}
+
+h1.letter-animation::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60vw;
+  border-color: #000000;
+  text-shadow: 1px 1px 2px rgb(122, 122, 122);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  bottom: -15px;
+  right: -20px;
+}
+
+.scroll-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipes-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-grow: 1;
+  margin: 0 4vw;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.recipes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button-L,
+.scroll-button-R {
+  position: absolute;
+  z-index: 3;
+  width: 3vw;
+  height: 23vh;
+  background-color: rgb(255 255 255);
+  color: rgb(216, 216, 216);
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  padding-top: 8vh;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.scroll-button-L {
+  left: 0;
+}
+
+.scroll-button-R {
+  right: 0;
+}
+.scroll-button-L:hover {
+  box-shadow: inset -20px 0px 40px -10px rgb(255, 255, 255),
+    15px 0px 30px 6px rgb(255, 255, 255), 40px 0px 40px 2px rgb(255, 255, 255);
+}
+.scroll-button-R:hover {
+  box-shadow: inset 20px 0px 40px -10px rgb(255, 255, 255),
+    -15px 0px 30px 6px rgb(255, 255, 255), -40px 0px 40px 2px rgb(255, 255, 255);
+}
+.scroll-button-L:hover,
+.scroll-button-R:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  color: rgba(94, 94, 94, 0.376);
+}
+.recipe-block {
+  width: 42vw;
+  height: 15vh;
+  margin: 1vh 1.5vw;
+  background-position: left center;
+  background-size: 100%;
+  vertical-align: text-bottom;
+  display: inline-flex;
+  flex-direction: column;
+  min-height: 20vh;
+  box-shadow: 4px 0px 10px 0px #00000075;
+}
+.recipe-block:hover {
+  opacity: 85%;
+  transform: scale(1.005);
+}
+.title {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  margin: 0 0 0 1vw;
+  text-shadow: 0px 0px 5px black;
+  margin-top: 7vh;
 }
 
 .rm-cont {
@@ -172,17 +201,13 @@ h1.letter-animation::after {
   visibility: visible;
 }
 
-#tags {
-  margin-left: 8px;
-  border-bottom: 1px solid rgb(53, 53, 53);
-  padding-bottom: 5px;
-}
-
 #refresh {
   display: inline-block;
+  cursor: pointer;
 }
 
 footer {
+  z-index: 12;
   position: fixed;
   bottom: 0;
   left: 0;
