@@ -9,18 +9,49 @@
 </head>
 
 <body>
-    <div id="cont">
-        <input id="rurl" placeholder="enter url" type="text">
-        <button id="add">add recipe</button>
-        <div id="stat"></div>
-        <a id="recipe-link" href="#"><img id="stat-img"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAAB+CAMAAAAKn+3gAAAAA1BMVEX///+nxBvIAAAAMklEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8Gbr4AAfCySl0AAAAASUVORK5CYII="></a>
-        <div id="recently-added-list"></div>
-    </div>
-
-    <footer><a class="link" href="/">Home</a></footer>
+    <header>
+        <nav>
+            <div class="arrow"><a class="link" href="/">&larr;</a></div>
+            <div class="brand">
+                <img src="../images/iconBrand.png" alt="Logo">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="cont">
+            <input id="rurl" placeholder="enter url from Minimalistbaker.com..." type="text">
+            <button id="add">add recipe</button>
+            <div id="stat"></div>
+            <img id="stat-img"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAAB+CAMAAAAKn+3gAAAAA1BMVEX///+nxBvIAAAAMklEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8Gbr4AAfCySl0AAAAASUVORK5CYII=">
+            <div class="ra-head">
+                <h1 class="title-ra">Recently Added</h1>
+                <a class="view-all" href="/">View all</a>
+            </div>
+            <div id="recently-added-list" class="recently-added-list">
+                <div class="scroll-wrapper">
+                    <div class="scroll-button-L">&lt;</div>
+                    <div class="recipes-container">
+                        <div class="recipes"></div>
+                    </div>
+                    <div class="scroll-button-R">&gt;</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="../images/fullBrand.png" alt="Logo">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Lindsey Jimenez</p>
+            </div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="../scripts/list.js"></script>
 </body>
 

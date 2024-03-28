@@ -9,7 +9,7 @@ const createTags = () => {
   });
   if (searchTags.length > 0) {
     const clear = `<button id="clear-tags">Clear Filters</button>`;
-    $("#tags").append(clear);
+    $("#clear-filter").append(clear);
   }
 };
 
@@ -52,6 +52,7 @@ const categorySort = (recipes) => {
         tags.indexOf(g) == -1 && tags.push(g);
         const tag = `<div class="tag">${g}</div>`;
         $(`#tags-${category}-${i}`).append(tag);
+        console.log(`${category}: ${tag}`);
       });
     });
     handleScroll(category);
@@ -108,16 +109,6 @@ $("#refresh").on("click", function () {
   refresh();
 });
 
-/* $("#recipes").on("mouseover", ".rm-cont", function () {
-  console.log("hover");
-  const rm = $(this).children();
-  rm.css("visibility", "visible");
-});
-
-$("#recipes").on("mouseout", ".rm-cont", function () {
-  $(this).children().css("visibility", "hidden");
-}); */
-
 $("#tags").on("click", ".sort", function () {
   const tag = $(this).text();
   searchTags.indexOf(tag) == -1 && searchTags.push(tag);
@@ -126,10 +117,13 @@ $("#tags").on("click", ".sort", function () {
   console.log(searchString);
   $.get(`/search?tag=${searchString}`, (data) => loadRecipes(data));
 });
+
 $(document).on("click", "#clear-tags", function () {
   searchTags.length = 0;
+  $(this).remove();
   refresh();
 });
+
 $("body").on("click", ".rm", function () {
   const id = $(this).attr("id");
   $.ajax({

@@ -1,5 +1,7 @@
+recentlyAdded();
 $(function () {
   $("#add").on("click", function () {
+    recentlyAdded();
     $("#stat-img").attr(
       "src",
       "https://cdn.dribbble.com/users/614270/screenshots/2534654/loader01.gif"
@@ -8,12 +10,11 @@ $(function () {
     const body = {
       url: $("#rurl").val(),
     };
-    console.log(body);
     $.post("/addrecipe", body, (data) => {
       if (data.title.length < 1) {
         $("#stat-img").attr(
           "src",
-          "https://i.giphy.com/media/OiC5BKaPVLl60/200w.webp"
+          "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXM2MXNscDBxeGNnNDAzeDB4eXhsY2p5NmlldDh0ZzZsZjBrcm5jciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ybwvTX4DTkwst6U/giphy.gif" /* "https://i.giphy.com/media/OiC5BKaPVLl60/200w.webp" */
         );
         $("#stat").text(
           "Oops! Something went wrong. Please make sure the link you entered is from minimalistbaker.com"
@@ -22,13 +23,12 @@ $(function () {
       } else {
         $("#stat-img").attr("src", data.images[0]);
         $("#stat").text("Recipe Successfully Added!");
-        recentlyAdded(data);
+        recentlyAdded();
       }
     }).fail(() => {
-      // Handle request failure
       $("#stat-img").attr(
         "src",
-        "https://i.giphy.com/media/OiC5BKaPVLl60/200w.webp"
+        /*ORIGINAL "https://i.giphy.com/media/OiC5BKaPVLl60/200w.webp" */ "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXM2MXNscDBxeGNnNDAzeDB4eXhsY2p5NmlldDh0ZzZsZjBrcm5jciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ybwvTX4DTkwst6U/giphy.gif"
       );
       $("#stat").text("Oops! Something went wrong.");
     });
@@ -37,25 +37,46 @@ $(function () {
     this.select();
   });
 });
-function recentlyAdded(recipe) {
-  console.log(recipe);
+function recentlyAdded() {
   $.get("/recipes")
     .done((recipes) => {
-      console.log(recipes);
-
-      // Find the recently added recipe in the list of recipes
-      const recentlyAddedRecipe = recipes.find((r) => r.title === recipe.title);
-      console.log("recipe: ", recipe.title);
-      console.log("r_id: ", recentlyAddedRecipe._id);
-      if (recentlyAddedRecipe) {
-        $("#recipe-link").attr("href", `/recipes/${recentlyAddedRecipe._id}`);
-        // If the recently added recipe is found, create a link to it
-        const recipeLink = `<a href="/recipes/${recentlyAddedRecipe._id}" class="link">${recentlyAddedRecipe.title}</a><br>`;
-        // Append the link to the recently added list
-        $("#recently-added-list").append(recipeLink);
-      }
+      const latestRecipes = recipes.slice(0, 5);
+      $(".recipes").empty();
+      latestRecipes.forEach((recentRecipe, i) => {
+        const recipeHTML = `
+            <a href="/recipes/${recentRecipe._id}">
+              <div style="background-image:url('${recentRecipe.images[0]}')" class="recipe-block">
+                <a id="rec-${i}" class="title" href="/recipes/${recentRecipe._id}">
+                  <div>${recentRecipe.title}</div>
+                </a>
+              </div> 
+            </a>`;
+        $("#recently-added-list .recipes").append(recipeHTML);
+        handleScroll();
+      });
     })
     .fail((xhr, status, error) => {
       console.error("Error fetching recipes:", error);
     });
+}
+function handleScroll() {
+  const recipesContainer = $(`#recently-added-list .recipes-container`);
+  const scrollLeft = $(`#recently-added-list .scroll-button-L`);
+  const scrollRight = $(`#recently-added-list .scroll-button-R`);
+  const scrollAmount = $(`#recently-added-list .recipe-block`).outerWidth(true);
+  scrollLeft.on("click", function () {
+    recipesContainer.animate(
+      { scrollLeft: "-=" + scrollAmount },
+      "fast",
+      "easeInOutCubic"
+    );
+  });
+
+  scrollRight.on("click", function () {
+    recipesContainer.animate(
+      { scrollLeft: "+=" + scrollAmount },
+      "fast",
+      "easeInOutCubic"
+    );
+  });
 }

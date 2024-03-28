@@ -1,8 +1,52 @@
-#cont {
-  text-align: center;
-  margin-top: 50px;
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+nav {
+  width: 100vw;
+  height: 5.5vh;
+  display: flex; /* Change to flex to allow positioning */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space items evenly */
+  padding: 0 1rem;
 }
 
+.link {
+  font-size: 1.5rem;
+  font-family: "Roboto Mono";
+  background-color: black;
+  color: white;
+  padding: 0 1vw 0.5vh 1vw;
+  margin: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.brand {
+  margin-top: 5vh;
+}
+.brand img {
+  margin: 3vh 5vw;
+}
+img {
+  width: 8vw;
+}
+/* END NAV */
+
+/*START MAIN*/
+#cont {
+  text-align: center;
+  margin: 5vh 0;
+}
+
+#add {
+  padding: 9px;
+}
+#add:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
 #add,
 #rurl {
   box-shadow: none;
@@ -10,41 +54,179 @@
   color: black;
   border: 1px solid black;
   font-family: "Roboto Mono";
-  padding: 3px;
   border-radius: 5px;
 }
 
 #rurl {
-  padding-left: 8px;
-}
-
-.link {
-  font-family: "Roboto Mono";
-  background-color: black;
-  color: white;
-  padding: 4px;
-  margin: 6px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 30px;
-}
-
-#stat-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-top: 200px;
+  padding: 0.8vh 0;
+  text-align: center;
+  width: calc(50% - 12vw);
 }
 
 #stat {
   font-family: "Roboto Mono";
-  margin-top: 100px;
+  margin-top: 5vh;
   text-align: center;
-  width: 100%;
+  width: 100vw;
+}
+
+#stat-img {
+  width: 24vw;
+  height: 24vh;
+  border-radius: 50%;
+  margin: 4vh;
+}
+
+/*RECENTLY ADDED LIST*/
+.ra-head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.title-ra {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  margin: 7vh 0 1vh 1vw;
+  text-shadow: 0px 0px 5px lightblue;
+  padding: 0 10vw 0 30vw;
+}
+.view-all {
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0);
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  font-style: italic;
+}
+.scroll-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+}
+
+.scroll-button-L,
+.scroll-button-R {
+  position: absolute;
+  z-index: 3;
+  width: 3vw;
+  height: 23vh;
+  background-color: rgb(255 255 255);
+  color: rgb(216, 216, 216);
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  padding-top: 20vh;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.scroll-button-L {
+  left: 0;
+}
+
+.scroll-button-R {
+  right: 0;
+}
+.scroll-button-L:hover {
+  box-shadow: inset -20px 0px 40px -10px rgb(255, 255, 255),
+    15px 0px 30px 6px rgb(255, 255, 255), 40px 0px 40px 2px rgb(255, 255, 255);
+}
+.scroll-button-R:hover {
+  box-shadow: inset 20px 0px 40px -10px rgb(255, 255, 255),
+    -15px 0px 30px 6px rgb(255, 255, 255), -40px 0px 40px 2px rgb(255, 255, 255);
+}
+.scroll-button-L:hover,
+.scroll-button-R:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  color: rgba(94, 94, 94, 0.376);
+}
+
+.recipes-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-grow: 1;
+  margin: 0 4vw;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.recipes-container::-webkit-scrollbar {
+  display: none;
+}
+
+.recipes {
+  display: flex;
+}
+.recipe-block {
+  width: 42vw;
+  height: 25vh;
+  margin: 1vh 1.5vw;
+  background-position: left center;
+  background-size: 100%;
+  vertical-align: text-bottom;
+  display: inline-flex;
+  flex-direction: column;
+  min-height: 20vh;
+  box-shadow: 4px 0px 10px 0px #00000075;
+  background-color: rgb(0 0 0 / 47%);
+  background-blend-mode: color;
+  background-repeat: no-repeat;
+}
+.recipe-block:hover,
+.title:hover {
+  opacity: 85%;
+  transform: scale(1.05);
+}
+.title {
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto Mono";
+  font-weight: 800;
+  margin: 11vh 0 0 1vw;
+  text-shadow: 0px 0px 5px black;
+  text-wrap: balance;
+}
+/*END MAIN*/
+
+/*START FOOTER*/
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Roboto Mono";
+}
+/*END FOOTER*/
+
+@media screen and (max-width: 768px) {
+  #stat {
+    margin-top: 5vh;
+  }
+
+  .scroll-button-L,
+  .scroll-button-R {
+    width: 8vw;
+    padding-top: 15vh;
+    font-size: 1.5rem;
+  }
+
+  .recipe-block {
+    width: 80vw;
+    height: 30vh;
+    margin: 1vh auto;
+    font-size: 0.8rem;
+  }
+
+  .title {
+    margin: 14vh 0 0 1vw;
+  }
+
+  footer {
+    bottom: 1vh;
+  }
 }

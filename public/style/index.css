@@ -1,11 +1,56 @@
 * {
   box-sizing: border-box;
 }
+
+nav {
+  width: 100vw;
+  height: 5.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  margin: 2vh 1vw 0 0;
+}
+
+.icon {
+  width: 8vw;
+}
+.name {
+  width: 13vw;
+}
+main > a:first-of-type {
+  margin-right: 7px;
+  padding-right: 7px;
+  border-right: 1px solid black;
+}
+.btn {
+  font-family: "Roboto Mono";
+  font-size: 15px;
+  color: black;
+  background-color: none;
+  text-decoration: none;
+  padding: 3px;
+  margin: 4px;
+}
+#refresh {
+  display: inline-block;
+  cursor: pointer;
+}
 #tags {
-  margin-left: 0.8vw;
+  text-align: right;
+  margin: 1.5vh 0.8vw 0 0;
   border-bottom: 1px solid rgb(53, 53, 53);
   padding-bottom: 0.5vh;
 }
+
 .tag {
   display: inline-block;
   background-color: black;
@@ -30,11 +75,11 @@
   background-color: #000000;
   color: #ffffff;
 }
-.tag-cont {
-  margin-left: 0.8vw;
-}
+
 #clear-tags {
-  margin-left: 85vw;
+  position: absolute;
+  right: 0.5vw;
+  top: 0.5vh;
   background-color: black;
   color: white;
   padding: 10px 20px;
@@ -175,6 +220,7 @@ h1.letter-animation::after {
   margin: 0 0 0 1vw;
   text-shadow: 0px 0px 5px black;
   margin-top: 7vh;
+  text-wrap: balance;
 }
 
 .rm-cont {
@@ -200,35 +246,31 @@ h1.letter-animation::after {
   box-shadow: -3px 3px 9px 1px black;
   visibility: visible;
 }
-
-#refresh {
-  display: inline-block;
-  cursor: pointer;
+.tag-cont {
+  margin-left: 0.8vw;
 }
 
 footer {
-  z-index: 12;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: relative;
   background-color: white;
   width: 100vw;
 }
-
-footer > a:first-of-type {
-  margin-right: 0px;
-  padding-right: 7px;
-  border-right: 1px solid black;
+footer .logo {
+  text-align: center;
+  padding: 0 10px 0 0;
+  font-family: "Roboto Mono";
+  justify-content: space-between;
+  align-items: center;
+}
+.info {
+  text-align: center;
 }
 
-.btn {
-  font-family: "Roboto Mono";
-  font-size: 15px;
-  color: black;
-  background-color: none;
-  text-decoration: none;
-  padding: 3px;
-  margin: 4px;
+.logo {
+  margin-right: auto;
+}
+.logo img {
+  width: 8vw;
 }
 
 @media only screen and (max-width: 900px) {
