@@ -101,43 +101,6 @@ i {
   padding: 2px 10vw;
 }
 
-div.letter-animation {
-  font-variant-caps: all-small-caps;
-  color: black;
-  font-weight: 800;
-  position: relative;
-  padding: 2px 10vw;
-  background-color: rgb(173 216 230 / 35%);
-  box-shadow: 4px 4px 5px rgb(122, 122, 122);
-  border-radius: 2px;
-}
-
-div.letter-animation::before {
-  content: "";
-  position: absolute;
-  height: 50%;
-  width: 60vw;
-  border-color: #000000;
-  text-shadow: 1px 1px 2px rgb(122, 122, 122);
-  border-style: solid;
-  border-width: 2px 0 0 2px;
-  top: -15px;
-  left: -20px;
-}
-
-div.letter-animation::after {
-  content: "";
-  position: absolute;
-  height: 50%;
-  width: 60vw;
-  border-color: #000000;
-  text-shadow: 1px 1px 2px rgb(122, 122, 122);
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  bottom: -15px;
-  right: -20px;
-}
-
 #ingredients {
   display: inline-block;
   font-family: "Roboto Mono";
