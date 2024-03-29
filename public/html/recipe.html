@@ -11,20 +11,41 @@
 </head>
 
 <body>
-    <div id="title"></div>
-    <div id="img-holder">
-        <img id="food-img" src="">
-        <div class="scroll" id="left"></div>
-        <div class="scroll" id="right"></div>
-        <div id="details">
-            <span id="time"><i class="far fa-clock"></i></span>
-            <span id="fridge"><i class="fas fa-angle-down"></i></span>
-            <span id="freezer"><i class="fas fa-angle-double-down"></i></span>
+    <header>
+        <nav>
+            <div class="arrow"><a class="link" href="/">&larr;</a></div>
+            <div class="brand">
+                <img src="../images/iconBrand.png" alt="Logo">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="title" class="letter-animation"></div>
+        <div id="img-holder">
+            <img id="food-img" src="">
+            <div class="scroll" id="left"></div>
+            <div class="scroll" id="right"></div>
+            <div id="details">
+                <span id="time"><i class="far fa-clock"></i></span>
+                <span id="fridge"><i class="fas fa-angle-down"></i></span>
+                <span id="freezer"><i class="fas fa-angle-double-down"></i></span>
+            </div>
         </div>
-    </div>
-    <div id="ingredients"></div>
-    <div id="instructions"></div>
-    <footer><a class="link" href="/">Home</a></footer>
+        <div class="recipe">
+            <div id="ingredients"></div>
+            <div id="instructions"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="../images/fullBrand.png" alt="Logo">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Lindsey Jimenez</p>
+            </div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../scripts/recipe.js"></script>

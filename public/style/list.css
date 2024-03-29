@@ -7,9 +7,9 @@ body {
 nav {
   width: 100vw;
   height: 5.5vh;
-  display: flex; /* Change to flex to allow positioning */
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Space items evenly */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
 }
 
@@ -197,6 +197,7 @@ img {
 
 /*START FOOTER*/
 footer {
+  font-size: 0.8rem;
   text-align: center;
   padding: 20px 0;
   font-family: "Roboto Mono";
