@@ -24,7 +24,7 @@ nav {
   border-radius: 5px;
 }
 .brand {
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 .brand img {
   margin: 3vh 5vw;
@@ -112,7 +112,7 @@ img {
   position: absolute;
   z-index: 3;
   width: 3vw;
-  height: 23vh;
+  height: 45vh;
   background-color: rgb(255 255 255);
   color: rgb(216, 216, 216);
   font-size: 2rem;
