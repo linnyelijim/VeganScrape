@@ -74,7 +74,7 @@ img {
   width: 24vw;
   height: 24vh;
   border-radius: 50%;
-  margin: 4vh;
+  margin: 2vh;
 }
 
 /*RECENTLY ADDED LIST*/
@@ -159,9 +159,6 @@ img {
   display: none;
 }
 
-.recipes {
-  display: flex;
-}
 .recipe-block {
   width: 42vw;
   height: 25vh;
@@ -204,9 +201,11 @@ footer {
 }
 /*END FOOTER*/
 
+/*Tablets*/
 @media screen and (max-width: 768px) {
-  #stat {
-    margin-top: 5vh;
+  .title-ra {
+    padding: 7vh 0 1vh 0;
+    margin: 0;
   }
 
   .scroll-button-L,
@@ -225,9 +224,33 @@ footer {
 
   .title {
     margin: 14vh 0 0 1vw;
+    font-size: 1rem;
   }
 
   footer {
     bottom: 1vh;
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 600px) {
+  #stat-img {
+    width: 18vw;
+    height: 18vh;
+  }
+  .recipes-container {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    white-space: nowrap; /* Prevent recipes from wrapping */
+  }
+
+  .recipe-block {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal; /* Reset white-space property */
+  }
+
+  .title {
+    margin: 14vh 0 0 1vw;
+    font-size: 0.8rem;
   }
 }

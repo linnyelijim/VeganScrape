@@ -8,8 +8,8 @@ const createTags = () => {
     $("#tags").append(tag);
   });
   if (searchTags.length > 0) {
-    const clear = `<button id="clear-tags">Clear Filters</button>`;
-    $("#clear-filter").append(clear);
+    const clear = `<button class="tag clear">Clear Filters</button>`;
+    $("#tags").append(clear);
   }
 };
 
@@ -81,8 +81,47 @@ function handleScroll(category) {
       "easeInOutCubic"
     );
   });
+  handleTagOverflow(category);
 }
+function handleTagOverflow(category) {
+  const tagContainers = $(`#category-${category} .tag-cont`);
+  tagContainers.each(function () {
+    const container = $(this);
+    const tags = container.children(".tag");
+    let totalWidth = 0;
+    let visibleWidth = container.width();
+    let tagCount = 0;
+    let hiddenTags = [];
 
+    tags.each(function () {
+      totalWidth += $(this).outerWidth(true);
+      if (totalWidth > visibleWidth) {
+        $(this).hide();
+        tagCount++;
+        hiddenTags.push(this);
+      }
+    });
+
+    if (tagCount > 0) {
+      container.append(
+        `<div class="tag hidden-placeholder">+${tagCount}</div>`
+      );
+    }
+
+    container.children(".hidden-placeholder").on("click", function () {
+      container.children(".tag:hidden").toggle();
+      $(this).hide();
+      container.append(`<div class="hide-overflow">less</div>`);
+    });
+
+    // Click event handler for hide button
+    container.on("click", ".hide-overflow", function () {
+      $(hiddenTags).slice(0, tagCount).hide();
+      container.children(".hidden-placeholder").show();
+      $(this).remove();
+    });
+  });
+}
 const loadRecipes = (recipes) => {
   console.log("Loading Recipes: ", recipes);
   $("#lists").empty();
@@ -118,7 +157,7 @@ $("#tags").on("click", ".sort", function () {
   $.get(`/search?tag=${searchString}`, (data) => loadRecipes(data));
 });
 
-$(document).on("click", "#clear-tags", function () {
+$(document).on("click", ".tag.clear", function () {
   searchTags.length = 0;
   $(this).remove();
   refresh();
