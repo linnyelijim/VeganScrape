@@ -114,7 +114,6 @@ function handleTagOverflow(category) {
       container.append(`<div class="hide-overflow">less</div>`);
     });
 
-    // Click event handler for hide button
     container.on("click", ".hide-overflow", function () {
       $(hiddenTags).slice(0, tagCount).hide();
       container.children(".hidden-placeholder").show();

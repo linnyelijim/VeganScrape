@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-/*THIS WAS THE START*/
+
 nav {
   width: 100%;
   height: auto;
@@ -78,17 +78,7 @@ main > a:first-of-type {
 .clear:hover {
   cursor: pointer;
 }
-/* #clear-tags {
-  position: absolute;
-  right: 0.5vw;
-  top: 0.5vh;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-} */
+
 #lists {
   margin: 15vh 0;
 }
@@ -267,14 +257,11 @@ footer .logo {
   text-align: center;
 }
 
-/* .logo {
-  margin-right: auto;
-} */
 .logo img {
   width: 8vw;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
   .icon {
     width: 12vw;
   }
@@ -301,6 +288,7 @@ footer .logo {
   .recipe-block {
     width: 40%;
     height: 30vh;
+    margin: 1vh 3vw 1vh 0;
   }
   .title {
     margin-top: 5vh;
@@ -332,86 +320,56 @@ footer .logo {
     width: 20vw;
   }
   .name {
-    width: 30vw; /* Adjusted for responsiveness */
+    width: 30vw;
   }
 
   main > a:first-of-type {
-    margin-right: 0.5vw; /* Adjusted for responsiveness */
-    padding-right: 0.5vw; /* Adjusted for responsiveness */
+    margin-right: 0.5vw;
+    padding-right: 4vw;
   }
 
   .btn {
-    font-size: 0.6rem; /* Adjusted for responsiveness */
+    font-size: 0.6rem;
     padding: 0.2rem;
     margin: 0.2rem;
   }
   h1.letter-animation {
-    font-size: 1.2rem; /* Adjusted for responsiveness */
-    letter-spacing: 0.2rem; /* Adjusted for responsiveness */
-    margin: 2vh auto 1.5vh; /* Adjusted for responsiveness */
-    padding: 0.3rem 5vw; /* Adjusted for responsiveness */
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    padding: 0.2rem 5vw;
   }
 
   .recipe-block {
-    width: 85%; /* Adjusted for responsiveness */
-    height: 25vh; /* Adjusted for responsiveness */
-    margin: 1vh auto;
+    width: 90%;
+    height: 25vh;
+    margin: 1vh 2vw 1vh 4vw;
   }
 
   .title {
-    margin-top: 3vh; /* Adjusted for responsiveness */
+    margin-top: 3vh;
   }
 
   .tag.sort,
   .tag.clear {
     font-size: 0.4rem;
   }
+  .tag {
+    margin: 0.2rem;
+  }
 
-  /*  h1.letter-animation {
-    font-size: 1em;
-    letter-spacing: 10px;
-    position: relative;
-    margin: 50px auto 30px;
-    padding: 2px 5vw;
-    box-shadow: 2px 2px 3px rgb(122, 122, 122);
-  }
-  h1.letter-animation::before {
-    top: -10px;
-    left: -10px;
-    border-width: 1.5px 0 0 1.5px;
-  }
-  h1.letter-animation::before,
-  h1.letter-animation::after {
-    width: 30vw;
-  }
-  h1.letter-animation::after {
-    bottom: -10px;
-    right: -10px;
-    border-width: 0 1.5px 1.5px 0;
-  } 
-  .recipe-block {
-    width: 85vw;
-    height: 30vh;
-    margin: 1vh 3vw;
-    font-size: 0.8rem;
-  }*/
   .rm {
     height: 10px;
     width: 10px;
     padding: 1px;
     font-size: 8px;
   }
-  /* .title {
-    margin-top: 3vh;
-    font-size: 0.9rem;
-  } */
 
   .tag {
     font-size: 0.7rem;
   }
   .scroll-button-R,
   .scroll-button-L {
-    width: 10vw;
-    font-size: 1rem;
+    width: 4vw;
+    font-size: 1.5rem;
   }
 }
