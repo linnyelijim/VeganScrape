@@ -8,24 +8,22 @@ nav {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
-}
-
-.brand img {
-  margin: 2vh 1vw 0 0;
-  width: 8vw;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .icon {
-  width: 8vw;
+  width: 12vw;
 }
 .name {
-  width: 13vw;
+  width: 30vw;
+  margin-left: 20%;
 }
 main > a:first-of-type {
   margin-right: 1vw;
@@ -47,7 +45,8 @@ main > a:first-of-type {
 }
 #tags {
   text-align: right;
-  margin: 2vh 0.8vw;
+  /*   margin: 2vh 0.8vw;
+ */
   border-bottom: 1px solid rgb(53, 53, 53);
   padding-bottom: 0.8vh;
 }
@@ -111,7 +110,7 @@ h1.letter-animation::after {
   border-style: solid;
   border-color: #000000;
   text-shadow: 1px 1px 2px rgb(122, 122, 122);
-  border-radius: 2px;
+  border-radius: 3%;
 }
 h1.letter-animation::before {
   border-width: 0.2rem 0 0 0.2rem;
@@ -192,7 +191,7 @@ h1.letter-animation::after {
   transform: scale(1.005);
 }
 .title {
-  display: inline-block;
+  display: inline-flex;
   text-decoration: none;
   color: white;
   font-family: "Roboto Mono";
@@ -258,12 +257,6 @@ footer .logo {
 }
 
 @media only screen and (max-width: 768px) {
-  .icon {
-    width: 12vw;
-  }
-  .name {
-    width: 18vw;
-  }
   main > a:first-of-type {
     margin-right: 1vw;
     padding-right: 1vw;
@@ -309,14 +302,8 @@ footer .logo {
 }
 
 @media only screen and (max-width: 600px) {
-  .brand img {
-    width: 20vw;
-  }
   .icon {
-    width: 20vw;
-  }
-  .name {
-    width: 30vw;
+    margin-right: 20px;
   }
 
   main > a:first-of-type {
