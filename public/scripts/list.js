@@ -1,6 +1,7 @@
 recentlyAdded();
 $(function () {
   $("#add").on("click", function () {
+    addStatSection();
     recentlyAdded();
     $("#stat-img").attr(
       "src",
@@ -24,6 +25,7 @@ $(function () {
         $("#stat-img").attr("src", data.images[0]);
         $("#stat").text("Recipe Successfully Added!");
         recentlyAdded();
+        addStatSection();
       }
     }).fail(() => {
       $("#stat-img").attr(
@@ -31,6 +33,7 @@ $(function () {
         /*ORIGINAL "https://i.giphy.com/media/OiC5BKaPVLl60/200w.webp" */ "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXM2MXNscDBxeGNnNDAzeDB4eXhsY2p5NmlldDh0ZzZsZjBrcm5jciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ybwvTX4DTkwst6U/giphy.gif"
       );
       $("#stat").text("Oops! Something went wrong.");
+      addStatSection();
     });
   });
   $("#rurl").on("dblclick", function () {
@@ -79,4 +82,13 @@ function handleScroll() {
       "easeInOutCubic"
     );
   });
+}
+
+function addStatSection() {
+  if ($("#stat").length === 0) {
+    const statImg = `<img id="stat-img" src="">`;
+    const stat = `<div id="stat"></div>`;
+    $("#status").append(stat);
+    $("#status").append(statImg);
+  }
 }
