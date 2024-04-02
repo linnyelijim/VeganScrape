@@ -5022,3 +5022,9 @@
 20240401	22:31:00	c78d409c-3463-4e88-bba0-05a4e7381244	GET	undefined	/recipes
 20240401	22:31:09	fcfd6fc0-10d7-4730-84a4-47d0b07509a8	GET	undefined	/recipes
 20240401	22:31:09	7c66bc60-e3a3-4e8e-a621-0d9d36ccef18	POST	http://localhost:5500	/addrecipe
+20240402	15:38:32	d3ac12f7-a54e-4fab-b2fc-832c08325266	GET	undefined	/
+20240402	15:38:32	61ee8c2a-dbeb-4e40-95cd-5eee5dad868a	GET	undefined	/style/index.css
+20240402	15:38:32	beb5228e-aef3-4ae3-99a5-26afb0dc524a	GET	undefined	/images/iconBrand.png
+20240402	15:38:32	9e6b0bf0-0f92-4306-98ef-f70963be8f5e	GET	undefined	/images/brandName.png
+20240402	15:38:32	9b8bf81d-e57f-48ad-9e02-3a35f10aa98f	GET	undefined	/scripts/index.js
+20240402	15:38:32	018c1b7d-03dc-49d7-9fa0-deda9d841f7b	GET	undefined	/recipes
