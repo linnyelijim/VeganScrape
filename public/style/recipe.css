@@ -1,34 +1,27 @@
 * {
   box-sizing: border-box;
 }
-header {
-  padding-bottom: 3vh;
-}
 nav {
-  width: 100vw;
-  height: 5.5vh;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .link {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Roboto Mono";
   background-color: black;
   color: white;
-  padding: 0 1vw 0.5vh 1vw;
+  padding: 0 2vw 0.2vh;
   margin: 16px;
   text-decoration: none;
   border-radius: 5px;
 }
-.brand,
-.arrow {
-  margin-top: 5vh;
-}
 .brand img {
-  margin: 5vh 2vw 0;
+  width: 18vw;
 }
 img {
   width: 8vw;
@@ -196,15 +189,15 @@ footer {
     font-size: 20px;
   }
   #food-img {
-    width: 85vw;
-    height: 40vh;
+    width: 83vw;
+    height: 55vh;
   }
   .scroll {
     top: 40%;
   }
   #details {
     font-size: 15px;
-    width: 95%;
+    width: 97%;
     left: 1.5vh;
   }
   li {

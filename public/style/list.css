@@ -5,12 +5,12 @@ body {
   overflow-x: hidden;
 }
 nav {
-  width: 100vw;
-  height: 5.5vh;
+  width: 100%;
+  height: auto;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .link {
