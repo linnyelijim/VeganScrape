@@ -286,7 +286,7 @@ footer .logo {
     margin: 1vh 3vw 1vh 0;
   }
   .title {
-    margin-top: 5vh;
+    display: block;
   }
   .tag {
     font-size: 0.7rem;
@@ -329,7 +329,7 @@ footer .logo {
   }
 
   .title {
-    margin-top: 3vh;
+    display: block;
   }
 
   .tag.sort,
