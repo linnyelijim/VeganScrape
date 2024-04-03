@@ -1,33 +1,28 @@
 * {
   box-sizing: border-box;
 }
-body {
-  overflow-x: hidden;
-}
+
 nav {
   width: 100%;
   height: auto;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
 .link {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Roboto Mono";
   background-color: black;
   color: white;
-  padding: 0 1vw 0.5vh 1vw;
+  padding: 0 2vw 0.2vh;
   margin: 16px;
   text-decoration: none;
   border-radius: 5px;
 }
-.brand {
-  margin-top: 8vh;
-}
 .brand img {
-  margin: 3vh 5vw;
+  width: 18vw;
 }
 img {
   width: 8vw;
@@ -37,7 +32,7 @@ img {
 /*START MAIN*/
 #cont {
   text-align: center;
-  margin: 5vh 0;
+  margin: 4vh 0;
 }
 
 #add {
@@ -71,10 +66,13 @@ img {
 }
 
 #stat-img {
-  width: 24vw;
+  width: 40vw;
   height: 24vh;
   border-radius: 50%;
   margin: 2vh;
+  border: 15px #d9d9d9 double;
+  background-color: #00000094;
+  box-shadow: 0 0 20px 5px black;
 }
 
 /*RECENTLY ADDED LIST*/
@@ -83,43 +81,75 @@ img {
   justify-content: space-evenly;
   align-items: flex-end;
 }
-.title-ra {
+h1.letter-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 1.5rem;
-  color: rgb(0, 0, 0);
+  font-variant-caps: all-small-caps;
+  color: black;
   font-family: "Roboto Mono";
   font-weight: 800;
-  margin: 7vh 0 1vh 1vw;
-  text-shadow: 0px 0px 5px lightblue;
-  padding: 0 10vw 0 30vw;
+  text-shadow: 2px 0px 1px rgb(255, 255, 255);
+  letter-spacing: 0.5rem;
+  position: relative;
+  margin: 7vh 2vw 2vh 20vw;
+  width: fit-content;
+  padding: 0.3rem 3vw;
+  background-color: lightblue;
+  box-shadow: 3px 3px 5px rgb(122, 122, 122);
+  border-radius: 2px;
+  z-index: 1;
+}
+h1.letter-animation::before,
+h1.letter-animation::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 60%;
+  border-style: solid;
+  border-color: #000000;
+  text-shadow: 1px 1px 2px rgb(122, 122, 122);
+  border-radius: 3%;
+}
+h1.letter-animation::before {
+  border-width: 0.2rem 0 0 0.2rem;
+  top: -0.8rem;
+  left: -1rem;
+}
+
+h1.letter-animation::after {
+  border-width: 0 0.2rem 0.2rem 0;
+  bottom: -0.8rem;
+  right: -1rem;
 }
 .view-all {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(0, 0, 0);
   font-family: "Roboto Mono";
   font-weight: 800;
   font-style: italic;
+  text-decoration: none;
 }
 .scroll-wrapper {
   display: flex;
   position: relative;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3vh;
 }
 
 .scroll-button-L,
 .scroll-button-R {
   position: absolute;
   z-index: 3;
-  width: 3vw;
-  height: 45vh;
-  background-color: rgb(255 255 255);
+  width: 4vw;
+  height: 20vh;
   color: rgb(216, 216, 216);
   font-size: 2rem;
   text-align: center;
   font-family: "Roboto Mono";
   font-weight: bold;
-  padding-top: 20vh;
+  padding-top: 8vh;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
 }
@@ -130,14 +160,7 @@ img {
 .scroll-button-R {
   right: 0;
 }
-.scroll-button-L:hover {
-  box-shadow: inset -20px 0px 40px -10px rgb(255, 255, 255),
-    15px 0px 30px 6px rgb(255, 255, 255), 40px 0px 40px 2px rgb(255, 255, 255);
-}
-.scroll-button-R:hover {
-  box-shadow: inset 20px 0px 40px -10px rgb(255, 255, 255),
-    -15px 0px 30px 6px rgb(255, 255, 255), -40px 0px 40px 2px rgb(255, 255, 255);
-}
+
 .scroll-button-L:hover,
 .scroll-button-R:hover {
   opacity: 0.8;
@@ -160,9 +183,9 @@ img {
 }
 
 .recipe-block {
-  width: 42vw;
-  height: 25vh;
-  margin: 1vh 1.5vw;
+  width: 40%;
+  height: 20vh;
+  margin: 1vh 3vw 1vh 0;
   background-position: left center;
   background-size: 100%;
   vertical-align: text-bottom;
@@ -179,16 +202,19 @@ img {
   opacity: 85%;
   transform: scale(1.05);
 }
+
 .title {
-  font-size: 1rem;
-  display: inline-block;
+  font-size: 1.5rem;
+  display: inline-flex;
   text-decoration: none;
   color: white;
   font-family: "Roboto Mono";
   font-weight: 800;
-  margin: 11vh 0 0 1vw;
+  margin: 8vh 0 0 0;
   text-shadow: 0px 0px 5px black;
   text-wrap: balance;
+  justify-content: center;
+  padding: 0 2vw;
 }
 /*END MAIN*/
 

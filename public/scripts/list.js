@@ -46,14 +46,11 @@ function recentlyAdded() {
       const latestRecipes = recipes.slice(0, 5);
       $(".recipes").empty();
       latestRecipes.forEach((recentRecipe, i) => {
-        const recipeHTML = `
-            <a href="/recipes/${recentRecipe._id}">
-              <div style="background-image:url('${recentRecipe.images[0]}')" class="recipe-block">
+        const recipeHTML = `<div style="background-image:url('${recentRecipe.images[0]}')" class="recipe-block">
                 <a id="rec-${i}" class="title" href="/recipes/${recentRecipe._id}">
                   <div>${recentRecipe.title}</div>
                 </a>
-              </div> 
-            </a>`;
+              </div>`;
         $("#recently-added-list .recipes").append(recipeHTML);
         handleScroll();
       });
