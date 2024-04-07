@@ -1,32 +1,36 @@
 * {
   box-sizing: border-box;
 }
-
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 nav {
+  margin-top: 4vh;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  border-bottom: 1px solid rgb(53, 53, 53);
 }
-
-.brand {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+.actions {
+  list-style-type: none;
+  padding-inline-start: unset;
 }
-
+li {
+  display: inline;
+}
 .icon {
   width: 12vw;
 }
 .name {
   width: 20vw;
-  margin-left: 20%;
+  margin: 1rem;
 }
-main > a:first-of-type {
-  margin-right: 1vw;
+ol > li > a:first-of-type {
   padding-right: 1vw;
   border-right: 1px solid black;
 }
@@ -45,10 +49,7 @@ main > a:first-of-type {
 }
 #tags {
   text-align: right;
-  /*   margin: 2vh 0.8vw;
- */
-  border-bottom: 1px solid rgb(53, 53, 53);
-  padding-bottom: 0.8vh;
+  padding-bottom: 1vh;
 }
 
 .tag {

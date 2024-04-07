@@ -20,28 +20,31 @@
 <body>
     <header>
         <nav>
-            <div class="arrow"><a class="link" href="/">&larr;</a></div>
-            <div class="brand">
-                <img src="../images/iconBrand.png" alt="Logo">
-            </div>
+            <a class="link" href="/">&larr;</a>
+
         </nav>
+        <div class="brand">
+            <img src="../images/iconBrand.png" alt="Logo">
+        </div>
     </header>
     <main>
         <div id="cont">
             <input id="rurl" placeholder="enter url from Minimalistbaker.com..." type="text">
             <button id="add">add recipe</button>
             <div id="status"></div>
-            <div class="ra-head">
-                <h1 class="letter-animation">Recently Added</h1>
-                <a class="view-all" href="/">View all</a>
-            </div>
-            <div id="recently-added-list" class="recently-added-list">
-                <div class="scroll-wrapper">
-                    <div class="scroll-button-L">&lt;</div>
-                    <div class="recipes-container">
-                        <div class="recipes"></div>
+            <div id="recently-added-list">
+                <div class="ra-head">
+                    <h1 class="letter-animation">Recently Added</h1>
+                    <a class="view-all" href="/">View all</a>
+                </div>
+                <div class="ra-list">
+                    <div class="scroll-wrapper">
+                        <div class="scroll-button-L">&lt;</div>
+                        <div class="recipes-container">
+                            <div class="recipes"></div>
+                        </div>
+                        <div class="scroll-button-R">&gt;</div>
                     </div>
-                    <div class="scroll-button-R">&gt;</div>
                 </div>
             </div>
         </div>

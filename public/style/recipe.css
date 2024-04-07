@@ -1,8 +1,15 @@
 * {
   box-sizing: border-box;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vh;
+  border-bottom: 1px solid rgb(53, 53, 53);
+}
 nav {
-  width: 100%;
+  width: 20%;
   height: auto;
   display: flex;
   align-items: center;
@@ -21,10 +28,11 @@ nav {
   border-radius: 5px;
 }
 .brand img {
-  width: 12vw;
+  width: 8vw;
+  margin: 1rem;
 }
 img {
-  width: 8vw;
+  width: 6vw;
 }
 main {
   margin: 5vh 0;
