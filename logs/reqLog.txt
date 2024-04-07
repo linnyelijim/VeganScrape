@@ -5162,3 +5162,16 @@
 20240402	19:32:05	41900602-78ff-458f-a798-3d279070db35	GET	undefined	/recipes
 20240402	19:32:24	b0e38b30-09d7-46b0-a041-f1bf2772818d	GET	undefined	/recipes
 20240402	19:32:24	f204d06c-fc53-4377-a47c-8cce74939067	POST	http://localhost:5500	/addrecipe
+20240407	17:38:19	8da4d89e-176b-4029-b23b-3a4443536228	GET	undefined	/recipes/660463adcc5bca4631e6542c
+20240407	17:38:20	0923d927-a364-4f2f-9ed3-02c05703c19c	GET	undefined	/images/iconBrand.png
+20240407	17:38:20	395fdd18-4d36-4dce-9c9d-ee6fcb461275	GET	undefined	/images/fullBrand.png
+20240407	17:38:20	a0cffc2f-6fb3-4784-9b5e-6f3b498b049b	GET	undefined	/style/recipe.css
+20240407	17:38:20	d2f0f064-831d-4387-8a85-749bbf246954	GET	undefined	/scripts/recipe.js
+20240407	17:38:20	3c298c38-f041-46d6-b6b7-391c97aa6437	GET	undefined	/recipe-info/660463adcc5bca4631e6542c
+20240407	17:39:21	a71092a3-0b94-4d8d-a952-c794b5b808a3	GET	undefined	/style/list.css
+20240407	17:39:50	f0104252-1adb-4bbd-95c6-7a368b91070b	GET	undefined	/
+20240407	17:39:50	167b590d-4846-4ef8-a7fb-b47d4cddf9e3	GET	undefined	/style/index.css
+20240407	17:39:50	b144b914-79cc-4366-8993-882b7b7bf995	GET	undefined	/images/iconBrand.png
+20240407	17:39:50	fd7c8033-2cea-45c6-ba32-dee719952601	GET	undefined	/images/brandName.png
+20240407	17:39:51	df48f27c-ea4d-439c-9e5c-3e58198ee045	GET	undefined	/scripts/index.js
+20240407	17:39:51	16b6bdad-0a46-4fa8-a880-28540425413b	GET	undefined	/recipes
