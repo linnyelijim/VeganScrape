@@ -24,7 +24,7 @@ nav {
   font-family: "Roboto Mono";
   background-color: black;
   color: white;
-  padding: 0 2vw 0.2vh;
+  padding: 1vh 1.3vw;
   margin: 16px;
   text-decoration: none;
   border-radius: 5px;
@@ -91,7 +91,7 @@ main {
 #recently-added-list {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 .ra-head {
   display: flex;
@@ -149,6 +149,9 @@ h1.letter-animation::after {
   font-style: italic;
   text-decoration: none;
 }
+.ra-list {
+  margin-top: 5vh;
+}
 .scroll-wrapper {
   display: flex;
 
@@ -203,7 +206,7 @@ h1.letter-animation::after {
 .recipe-block {
   width: 40%;
   height: 30vh;
-  margin: 1vh 3vw 1vh 0;
+  margin: 1vh 1.5vw;
   background-position: left center;
   background-size: 100%;
   vertical-align: text-bottom;
@@ -214,6 +217,7 @@ h1.letter-animation::after {
   background-color: rgb(0 0 0 / 47%);
   background-blend-mode: color;
   background-repeat: no-repeat;
+  justify-content: center;
 }
 .recipe-block:hover,
 .title:hover {
@@ -222,13 +226,11 @@ h1.letter-animation::after {
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: inline-flex;
   text-decoration: none;
   color: white;
   font-family: "Roboto Mono";
-  font-weight: 800;
-  margin: 8vh 0 0 0;
   text-shadow: 0px 0px 5px black;
   text-wrap: balance;
   justify-content: center;
